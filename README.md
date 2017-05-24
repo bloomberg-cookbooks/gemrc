@@ -1,6 +1,10 @@
-# gemrc-cookbook
-[![Cookbook Version](https://img.shields.io/cookbook/v/gemrc.svg)](https://supermarket.chef.io/cookbooks/gemrc)
-[![License](https://img.shields.io/badge/license-Apache_2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+# gemrc-ng cookbook
+
+[![Build Status](https://img.shields.io/travis/johnbellone/nrpe-ng-cookbook.svg)](https://travis-ci.org/johnbellone/nrpe-ng-cookbook)
+[![Code Quality](https://img.shields.io/codeclimate/github/johnbellone/nrpe-ng-cookbook.svg)](https://codeclimate.com/github/johnbellone/nrpe-ng-cookbook)
+[![Test Coverage](https://codeclimate.com/github/johnbellone/nrpe-ng-cookbook/badges/coverage.svg)](https://codeclimate.com/github/johnbellone/nrpe-ng-cookbook/coverage)
+[![Cookbook Version](https://img.shields.io/cookbook/v/nrpe-ng.svg)](https://supermarket.chef.io/cookbooks/nrpe-ng)
+[![License](https://img.shields.io/github/license/johnbellone/nrpe-ng-cookbook.svg?maxAge=2592000)](http://www.apache.org/licenses/LICENSE-2.0)
 
 Library cookbook which manages a [RubyGems configuration file][0].
 
