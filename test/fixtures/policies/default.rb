@@ -8,6 +8,4 @@ named_run_list :debian, 'sudo::default', 'apt::default', run_list
 named_run_list :freebsd, 'freebsd::default', run_list
 named_run_list :windows, 'windows::default', run_list
 
-default['gemrc']['path'] = '/etc/gemrc'
-default['gemrc']['reload'] = true
 default['gemrc']['config'][':sources'] = ['http://rubygems.org/']

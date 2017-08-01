@@ -1,4 +1,4 @@
-describe file('/opt/chefdk/embedded/etc/gemrc') do
+describe file('/opt/chef/embedded/etc/gemrc') do
   it { should exist }
   its('type') { should eq :file }
   its('owner') { should eq 'root' }
@@ -7,7 +7,7 @@ describe file('/opt/chefdk/embedded/etc/gemrc') do
   its('content') { should eq <<-GEMRC }
 ---
 gem: "--no-ri --no-rdoc"
-:sources:
+":sources":
 - http://rubygems.org/
 GEMRC
 end

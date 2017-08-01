@@ -7,7 +7,7 @@
 #
 
 gemrc_file Gem::ConfigFile::SYSTEM_WIDE_CONFIG_FILE do
-  options node['gemrc']['config']
+  options node['gemrc']['config'].to_h
   reload true
   owner 'root'
   group node['root_group']

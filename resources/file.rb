@@ -20,12 +20,11 @@ def to_yaml
   config = {}
   symbols = %i(sources update_sources backtrace verbose bulk_threshold)
   options.each_pair do |k, v|
-    key = k, value = v
-
-    key = k.to_sym if symbols.include?(k.to_sym)
-    value = v.to_a if v.is_a?(Chef::Node::ImmutableArray)
-
-    config[key] = value
+    if symbols.include?(k.to_sym)
+      config[k.to_sym] = v
+    else
+      config[k] = v
+    end
   end
   config.to_yaml
 end
