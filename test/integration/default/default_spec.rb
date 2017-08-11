@@ -7,11 +7,7 @@ describe file('/opt/chef/embedded/etc/gemrc') do
   its('content') { should eq <<-GEMRC }
 ---
 gem: "--no-ri --no-rdoc"
-:sources:
+":sources":
 - http://rubygems.org/
 GEMRC
-end
-
-describe file('/root/.gemrc') do
-  it { should_not exist }
 end

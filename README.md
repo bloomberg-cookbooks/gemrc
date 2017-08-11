@@ -1,31 +1,36 @@
-# gemrc-ng cookbook
+# blp-gemrc cookbook
 
-[![Build Status](https://img.shields.io/travis/johnbellone/nrpe-ng-cookbook.svg)](https://travis-ci.org/johnbellone/nrpe-ng-cookbook)
-[![Code Quality](https://img.shields.io/codeclimate/github/johnbellone/nrpe-ng-cookbook.svg)](https://codeclimate.com/github/johnbellone/nrpe-ng-cookbook)
-[![Test Coverage](https://codeclimate.com/github/johnbellone/nrpe-ng-cookbook/badges/coverage.svg)](https://codeclimate.com/github/johnbellone/nrpe-ng-cookbook/coverage)
-[![Cookbook Version](https://img.shields.io/cookbook/v/nrpe-ng.svg)](https://supermarket.chef.io/cookbooks/nrpe-ng)
-[![License](https://img.shields.io/github/license/johnbellone/nrpe-ng-cookbook.svg?maxAge=2592000)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://img.shields.io/travis/bloomberg-cookbooks/gemrc.svg)](https://travis-ci.org/bloomberg-cookbooks/gemrc)
+[![Cookbook Version](https://img.shields.io/cookbook/v/blp-gemrc.svg)](https://supermarket.chef.io/cookbooks/blp-gemrc)
+[![License](https://img.shields.io/github/license/bloomberg-cookbooks/gemrc.svg?maxAge=2592000)](http://www.apache.org/licenses/LICENSE-2.0)
 
-Library cookbook which manages a [RubyGems configuration file][0].
+The blp-gemrc cookbook is a library cookbook that provides a custom
+resource for configuring the [gemrc file][0] for
+a [RubyGems environment][1].
 
-## Basic Usage
-The default recipe configures the [gem environment][1] to disable the
-installation of documentation when gems are installed. A common use
-case for this cookbook is to configure the Chef Client's gem
-environment to an internal mirror if behind the veil of the corporate
-firewall.
+## Platforms
 
-Here is an example of how to use an internal [Artifactory instance][2]
-to [mirror the RubyGems.org repository][3].
+The following platforms are tested automatically
+using [Test Kitchen][0], in Docker, with
+the [default suite of integration tests][2]:
 
-``` ruby
-node.default['gemrc']['path'] = Gem::ConfigFile::SYSTEM_WIDE_CONFIG_FILE
-node.default['gemrc']['reload'] = true
-node.default['gemrc']['config']['sources'] = ['http://artifactory.corporate.com/artifactory/api/gems/ruby-gems/']
-include_recipe 'gemrc::default'
-```
+- Ubuntu 12.04/14.04/16.04
+- CentOS (RHEL) 6/7
 
-[0]: http://docs.ruby-lang.org/en/2.1.0/Gem/ConfigFile.html
-[1]: http://guides.rubygems.org/command-reference/#gem_environment
-[2]: https://www.jfrog.com/artifactory/
-[3]: https://www.jfrog.com/confluence/display/RTF/RubyGems+Repositories
+Additionally, the platforms below are also known to work:
+
+- AIX 7.1
+- Solaris 5.11
+
+## Attributes
+
+| Attribute Name | Type | Default Value | Description |
+| -------------- | ---- | ------------- | ----------- |
+| node['gemrc']['options'] | Hash | `gem: '--no-ri --no-rdoc'` | Sets the options for the default recipe gemrc configuration. |
+| node['gemrc']['path'] | String | /root/.gemrc | Sets the path for the default recipe gemrc configuration. |
+| node['gemrc']['reload'] | true, false | false | Reloads the Gem configuration during the Chef Client convergence. |
+
+[0]: https://docs.ruby-lang.org/en/2.1.0/Gem/ConfigFile.html
+[1]: https://rubygems.org/
+[2]: https://github.com/bloomberg-cookbooks/gemrc/blob/master/test/integration/default/default_spec.rb
+[3]: https://github.com/chef/omnibus
