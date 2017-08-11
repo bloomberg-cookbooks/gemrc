@@ -21,6 +21,7 @@ Additionally, the platforms below are also known to work:
 
 - AIX 7.1
 - Solaris 5.11
+- Windows 2008r2/2012r2
 
 ## Attributes
 
