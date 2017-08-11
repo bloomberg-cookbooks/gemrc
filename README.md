@@ -23,15 +23,20 @@ Additionally, the platforms below are also known to work:
 - Solaris 5.11
 - Windows 2008r2/2012r2
 
+## Recipes
+
+The [default recipe][4] configures the embedded gem configuration of
+the Chef Client. This allows for changing the gem sources that would
+get pulled from during a normal convergence.
+
 ## Attributes
 
 | Attribute Name | Type | Default Value | Description |
 | -------------- | ---- | ------------- | ----------- |
 | node['gemrc']['options'] | Hash | `gem: '--no-ri --no-rdoc'` | Sets the options for the default recipe gemrc configuration. |
-| node['gemrc']['path'] | String | /root/.gemrc | Sets the path for the default recipe gemrc configuration. |
-| node['gemrc']['reload'] | true, false | false | Reloads the Gem configuration during the Chef Client convergence. |
 
 [0]: https://docs.ruby-lang.org/en/2.1.0/Gem/ConfigFile.html
 [1]: https://rubygems.org/
 [2]: https://github.com/bloomberg-cookbooks/gemrc/blob/master/test/integration/default/default_spec.rb
 [3]: https://github.com/chef/omnibus
+[4]: https://github.com/bloomberg-cookbooks/gemrc/blob/master/recipes/default.rb
