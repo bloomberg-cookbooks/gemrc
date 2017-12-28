@@ -24,6 +24,7 @@ env:
     - INSTANCE=default-ubuntu-1204
     - INSTANCE=default-ubuntu-1404
     - INSTANCE=default-ubuntu-1604
+    - INSTANCE=default-ubuntu-1804
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
@@ -41,3 +42,5 @@ matrix:
         - cookstyle
         - foodcritic . --exclude spec -f any
       env: LINT=1
+  allow_failures:
+    - env: INSTANCE=default-ubuntu-1804
