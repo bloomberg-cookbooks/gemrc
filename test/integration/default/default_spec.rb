@@ -6,8 +6,8 @@ describe file('/opt/chef/embedded/etc/gemrc') do
   its('mode') { should eq 420 }
   its('content') { should eq <<-GEMRC }
 ---
-gem: "--no-ri --no-rdoc"
 ":sources":
 - http://rubygems.org/
+gem: "--no-ri --no-rdoc"
 GEMRC
 end

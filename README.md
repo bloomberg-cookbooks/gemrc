@@ -33,7 +33,7 @@ get pulled from during a normal convergence.
 
 | Attribute Name | Type | Default Value | Description |
 | -------------- | ---- | ------------- | ----------- |
-| node['gemrc']['options'] | Hash | `gem: '--no-ri --no-rdoc'` | Sets the options for the default recipe gemrc configuration. |
+| `node['gemrc']['config']` | Hash | `gem: '--no-ri --no-rdoc'` | Sets the options for the default recipe gemrc configuration. |
 
 [0]: https://docs.ruby-lang.org/en/2.1.0/Gem/ConfigFile.html
 [1]: https://rubygems.org/

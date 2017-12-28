@@ -8,7 +8,6 @@ transport:
 
 provisioner:
   name: dokken
-  policyfile: test/fixtures/policies/default.rb
   deprecations_as_errors: true
 
 verifier:
