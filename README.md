@@ -35,6 +35,18 @@ get pulled from during a normal convergence.
 | -------------- | ---- | ------------- | ----------- |
 | `node['gemrc']['config']` | Hash | `gem: '--no-ri --no-rdoc'` | Sets the options for the default recipe gemrc configuration. |
 
+## Basic Usage
+
+A common use case for this cookbook is to configure the Chef Client's gem environment to an internal mirror if behind the veil of the corporate firewall.
+
+Here is an example of how to use an internal Artifactory instance to mirror the RubyGems.org repository.
+```
+node.default['gemrc']['path'] = Gem::ConfigFile::SYSTEM_WIDE_CONFIG_FILE
+node.default['gemrc']['reload'] = true
+node.default['gemrc']['config']['sources'] = ['http://artifactory.corporate.com/artifactory/api/gems/ruby-gems/']
+include_recipe 'gemrc::default'
+```
+
 [0]: https://docs.ruby-lang.org/en/2.1.0/Gem/ConfigFile.html
 [1]: https://rubygems.org/
 [2]: https://github.com/bloomberg-cookbooks/gemrc/blob/master/test/integration/default/default_spec.rb
