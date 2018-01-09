@@ -4,5 +4,6 @@ Style/SingleLineMethods:
   Enabled: false
 AllCops:
   Exclude:
+    - Policyfile.rb
+    - metadata.rb
     - 'test/**/*.rb'
-    - 'spec/**/*.rb'
