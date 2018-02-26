@@ -1,5 +1,5 @@
 name 'blp-gemrc'
-version '1.0.2'
+version '1.0.3'
 maintainer 'Bloomberg Infrastructure Engineering'
 maintainer_email 'chef@bloomberg.net'
 license 'Apache-2.0'
