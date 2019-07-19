@@ -12,4 +12,5 @@ gemrc_file Gem::ConfigFile::SYSTEM_WIDE_CONFIG_FILE do
   owner 'root'
   group node['root_group']
   mode '0644'
+  sensitive node['gemrc']['sensitive']
 end.run_action(:create)

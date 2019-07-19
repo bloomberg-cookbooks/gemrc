@@ -9,6 +9,8 @@ transport:
 provisioner:
   name: dokken
   deprecations_as_errors: true
+  client_rb:
+    chef_license: accept
 
 verifier:
   name: inspec
@@ -66,7 +68,7 @@ platforms:
       pid_one_command: /bin/systemd
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
-        - RUN /usr/bin/apt-get install apt-transport-https lsb-release procps net-tools sudo -y
+        - RUN /usr/bin/apt-get install apt-transport-https lsb-release procps net-tools sudo systemd -y
 
 suites:
   - name: default
