@@ -34,6 +34,7 @@ get pulled from during a normal convergence.
 | Attribute Name | Type | Default Value | Description |
 | -------------- | ---- | ------------- | ----------- |
 | `node['gemrc']['config']` | Hash | `gem: '--no-ri --no-rdoc'` | Sets the options for the default recipe gemrc configuration. |
+| `node['gemrc']['sensitive']` | Boolean | `false` | Tells the default recipe whether the gemrc is sensitive (should not be output to Chef log) |
 
 ## Basic Usage
 
