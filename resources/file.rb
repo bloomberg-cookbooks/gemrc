@@ -41,9 +41,7 @@ action :create do
     sensitive new_resource.sensitive
   end
 
-  if new_resource.reload && r.updated_by_last_action?
-    Gem.configuration = Gem::ConfigFile.new ["--config-file=#{new_resource.path}"]
-  end
+  Gem.configuration = Gem::ConfigFile.new ["--config-file=#{new_resource.path}"] if new_resource.reload && r.updated_by_last_action?
 end
 
 action :delete do

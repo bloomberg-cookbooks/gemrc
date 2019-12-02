@@ -1,9 +1,15 @@
-Lint/EndAlignment:
-  Enabled: false
-Style/SingleLineMethods:
-  Enabled: false
 AllCops:
   Exclude:
     - Policyfile.rb
     - metadata.rb
     - 'test/**/*.rb'
+Lint/EndAlignment:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  Enabled: false
+Style/SingleLineMethods:
+  Enabled: false
