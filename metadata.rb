@@ -1,5 +1,5 @@
 name 'blp-gemrc'
-version '1.0.4'
+version '1.1.0'
 maintainer 'Bloomberg Infrastructure Engineering'
 maintainer_email 'chef@bloomberg.net'
 license 'Apache-2.0'
@@ -16,3 +16,5 @@ supports 'redhat'
 supports 'solaris2'
 supports 'ubuntu'
 supports 'windows'
+
+depends 'chef-sugar'

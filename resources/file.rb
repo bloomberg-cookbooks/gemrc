@@ -35,9 +35,9 @@ action :create do
 
   r = file new_resource.path do
     content new_resource.to_yaml
-    owner new_resource.owner
-    group new_resource.group
-    mode new_resource.mode
+    owner new_resource.owner unless windows?
+    group new_resource.group unless windows?
+    mode new_resource.mode unless windows?
     sensitive new_resource.sensitive
   end
 
