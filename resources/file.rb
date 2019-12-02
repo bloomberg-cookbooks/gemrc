@@ -35,15 +35,13 @@ action :create do
 
   r = file new_resource.path do
     content new_resource.to_yaml
-    owner new_resource.owner
-    group new_resource.group
-    mode new_resource.mode
+    owner new_resource.owner unless windows?
+    group new_resource.group unless windows?
+    mode new_resource.mode unless windows?
     sensitive new_resource.sensitive
   end
 
-  if new_resource.reload && r.updated_by_last_action?
-    Gem.configuration = Gem::ConfigFile.new ["--config-file=#{new_resource.path}"]
-  end
+  Gem.configuration = Gem::ConfigFile.new ["--config-file=#{new_resource.path}"] if new_resource.reload && r.updated_by_last_action?
 end
 
 action :delete do
