@@ -6,6 +6,7 @@
 # Copyright 2014-2017, Bloomberg Finance L.P.
 #
 
+require 'yaml'
 provides :gemrc_file
 
 property :path, String, name_property: true
