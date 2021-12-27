@@ -1,5 +1,5 @@
 name 'blp-gemrc'
-version '3.0.0'
+version '4.0.0'
 maintainer 'Bloomberg Infrastructure Engineering'
 maintainer_email 'chef@bloomberg.net'
 license 'Apache-2.0'
@@ -8,7 +8,7 @@ long_description 'Configures gemrc configuration file for RubyGems.'
 
 issues_url 'https://github.com/bloomberg-cookbooks/gemrc/issues'
 source_url 'https://github.com/bloomberg-cookbooks/gemrc'
-chef_version '>= 12.5'
+chef_version '>= 16'
 
 supports 'aix'
 supports 'centos'
@@ -16,5 +16,3 @@ supports 'redhat'
 supports 'solaris2'
 supports 'ubuntu'
 supports 'windows'
-
-depends 'chef-sugar'

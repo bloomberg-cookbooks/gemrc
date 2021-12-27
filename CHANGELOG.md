@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.0.0]
+- Remove chef-sugar dependency built into chef 16
+- Fix Chef 17 unified_mode deprecation
+
 ## [3.0.0]
 - implement workaround mentioned in - https://github.com/chef/chef/issues/10492
 

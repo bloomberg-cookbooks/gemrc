@@ -9,6 +9,8 @@
 require 'yaml'
 provides :gemrc_file
 
+unified_mode true
+
 property :path, String, name_property: true
 property :owner, String, default: 'root'
 property :group, String, default: lazy { node['root_group'] }
